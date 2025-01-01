@@ -5,22 +5,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/t/tcmarkers/tcmarkers-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/t/tcmarkers/tcmarkers-{{ version }}.tar.gz
   sha256: 2e31ee5bae5462b6d23b8902af748fc419792512c5893deb7d7e25ceb16a6385
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools_scm
     - setuptools_scm_git_archive
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - matplotlib-base
     - numpy
 
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/abrammer/tc_markers
