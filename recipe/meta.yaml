@@ -1,12 +1,12 @@
-{% set version = "0.0.3" %}
+{% set version = "0.0.5" %}
 
 package:
   name: tcmarkers
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/t/tcmarkers/tcmarkers-{{ version }}.tar.gz
-  sha256: 2e31ee5bae5462b6d23b8902af748fc419792512c5893deb7d7e25ceb16a6385
+  url: https://pypi.org/packages/source/t/tcmarkers/tcmarkers-{{ version }}.tar.gz
+  sha256: 1aa3f8ada18b415fc62d6be4b4941f4cb337ea7313ee41d57ded6a5a69245588
 
 build:
   number: 0
@@ -37,7 +37,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary:  Matplotib paths for Tropical Storm and Hurricane symbols
+  summary: Matplotib paths for Tropical Storm and Hurricane symbols
 
 extra:
   recipe-maintainers:
