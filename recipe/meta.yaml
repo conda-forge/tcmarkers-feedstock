@@ -9,18 +9,18 @@ source:
   sha256: 1aa3f8ada18b415fc62d6be4b4941f4cb337ea7313ee41d57ded6a5a69245588
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools_scm
     - setuptools_scm_git_archive
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - matplotlib-base
     - numpy
 
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/abrammer/tc_markers
